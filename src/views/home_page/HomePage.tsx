@@ -29,7 +29,7 @@ const HomePage = () => {
   return (
     <>
       {init && <Particles className="-z-10 fixed" id="tsparticles" options={config as any} particlesLoaded={particlesLoaded} />}
-      <div className="container mx-auto flex flex-col justify-center items-center min-h-screen">
+      <div className="py-10 container mx-auto flex flex-col justify-center items-center min-h-screen">
         <Title text="Martin Fowler Code Smells" />
         <div className="flex gap-10 flex-wrap justify-center">
           {smells.map((smell) => (
@@ -37,6 +37,7 @@ const HomePage = () => {
               key={smell.id}
               id={smell.id}
               type={smell.type}
+              image={smell.image}
               owner={smell.owner}
               name={smell.name}
               style={smell.style}

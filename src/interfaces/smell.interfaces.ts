@@ -10,6 +10,7 @@ export interface ISmellGroup {
   description: string;
   solutions: string[];
   type: string;
+  image: string;
   codeBefore: ICode[];
   codeAfter: ICode[];
 }
@@ -19,6 +20,7 @@ export interface ISmell {
   name: string;
   type: string;
   description: string;
+  image: string;
   style: string;
   owner: string;
   volume: string;

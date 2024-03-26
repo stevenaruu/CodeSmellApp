@@ -65,6 +65,7 @@ const SmellPage = () => {
         {smell?.smell.map((smellItem) => (
           <div key={smellItem.id} id={smellItem.id.toString()} className="mt-10 bg-gray-100 p-10">
             <p className="text-2xl font-bold">{smellItem.name}</p>
+            <img className="my-10" src={smellItem.image} alt="" />
             <p className="mt-1 text-justify">{smellItem.description}</p>
             <div className="mt-1">
               <p className="font-semibold text-lg text-sky-500 mb-1">Solution</p>

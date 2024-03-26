@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
 
 const MusicCard = (props: IMusicCard) => {
-  const { id, type, owner, name, style, volume } = props
+  const { id, type, owner, name, style, volume, image } = props
   const navigate = useNavigate();
 
   const handleClick = (name: string) => {
@@ -79,6 +79,7 @@ const MusicCard = (props: IMusicCard) => {
       <div className="relative">
         <div className="absolute inset-0 flex items-center justify-center"></div>
       </div>
+      <img className='m-auto' src={image} alt="" />
       <div className="px-6 py-4">
         <div className="flex items-center">
           <svg
