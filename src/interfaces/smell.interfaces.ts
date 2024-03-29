@@ -13,6 +13,7 @@ export interface ISmellGroup {
   image: string;
   codeBefore: ICode[];
   codeAfter: ICode[];
+  explanation: string;
 }
 
 export interface ISmell {

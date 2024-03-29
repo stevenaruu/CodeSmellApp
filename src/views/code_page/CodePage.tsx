@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { smellData } from "../../utils/smell";
 import Header from '../../components/header/Header';
-import { CopyBlock, dracula } from 'react-code-blocks';
 import SnippetCode from '../../components/snippet_code/SnippetCode';
 
 const CodePage = () => {
@@ -26,7 +25,7 @@ const CodePage = () => {
         wallpaper='bg-code'
         isNavbar={false}
       />
-      <div className="container mx-auto mt-10">
+      <div className="container mx-auto mt-10 mb-10">
         <SnippetCode
           text='Code Before'
           codes={smell?.codeBefore}
@@ -35,6 +34,10 @@ const CodePage = () => {
           text='Code After'
           codes={smell?.codeAfter}
         />
+        <div className='p-4 bg-gray-200 rounded-md text-justify'>
+          <p className="text-4xl font-bold mb-4">Explanation</p>
+          {smell?.explanation}
+        </div>
       </div>
     </>
   )

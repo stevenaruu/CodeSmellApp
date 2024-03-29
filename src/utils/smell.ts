@@ -34,12 +34,13 @@ export const smellData: ISmell[] = ([
       {
         id: 1,
         name: 'Divergent Change',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        solutions: ['a', 'b'],
+        description: 'Divergent Change adalah situasi di mana jika terjadi perubahan dalam sebuah sistem sehingga berbagai bagian dari sistem tersebut juga harus diubah.',
+        solutions: ['Extract Class', 'Extract Superclass', 'Extract Subclass'],
         type: 'divergent-change',
         image: divergentChange,
         codeBefore: divergentChangeBefore,
         codeAfter: divergentChangeAfter,
+        explanation: 'Perbedaan pada before after codingan diatas terletak pada Class ShoppingCart dimana awalnya function addItem dan removeItem melakukan perubahan pada totalPrice, dimana jika terjadi perubahan pada logika perhitungan harga maka function addItem dan removeItem juga harus diubah.'
       },
       {
         id: 2,
@@ -50,16 +51,18 @@ export const smellData: ISmell[] = ([
         image: shotgunSurgery,
         codeBefore: shotgunSurgeryBefore,
         codeAfter: shotgunSurgeryAfter,
+        explanation: ''
       },
       {
         id: 3,
         name: 'Parallel Inheritance Hierarchies',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        solutions: ['a', 'b'],
+        solutions: ['Move Method', 'Move Field'],
         type: 'parallel-inheritance-hierarchies',
         image: parallelInheritanceHierarchies,
         codeBefore: parallelInheritanceHierarchiesBefore,
         codeAfter: parallelInheritanceHierarchiesAfter,
+        explanation: ''
       }
     ]
   },
@@ -77,61 +80,67 @@ export const smellData: ISmell[] = ([
         id: 1,
         name: 'Comments',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        solutions: ['a', 'b'],
+        solutions: ['Extract Variable', 'Extract Method', 'Rename Method', 'Introduce Assertion'],
         type: 'comments',
         image: comments,
         codeBefore: commentBefore,
-        codeAfter: commentAfter
+        codeAfter: commentAfter,
+        explanation: ''
       },
       {
         id: 2,
         name: 'Duplicate Code',
         description: 'Smell ini terjadi ketika beberapa programmer mengerjakan bagian yang berbeda dari program yang sama pada waktu yang sama. Karena mereka mengerjakan tugas yang berbeda, mereka mungkin tidak menyadari bahwa rekan mereka telah menulis kode serupa yang dapat digunakan kembali untuk kebutuhan mereka sendiri.',
-        solutions: ['Extract Method', 'Pull Up Constructor Body', 'Form Template Method', 'Substitute Algorithm'],
+        solutions: ['Extract Method', 'Pull Up Field', 'Pull Up Constructor Body', 'Form Template Method', 'Substitute Algorithm', 'Extract Superclass', 'Extract Class', 'Consolidate Conditional Expression', ' Consolidate Duplicate Conditional Fragments'],
         type: 'duplicate-code',
         image: duplicateCode,
         codeBefore: duplicateCodeBefore,
         codeAfter: duplicateCodeAfter,
+        explanation: ''
       },
       {
         id: 3,
         name: 'Lazy Class',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        solutions: ['a', 'b'],
+        solutions: ['Inline Class', 'Collapse Hierarchy'],
         type: 'lazy-class',
         image: lazyClass,
         codeBefore: lazyClassBefore,
         codeAfter: lazyClassAfter,
+        explanation: ''
       },
       {
         id: 4,
         name: 'Data Class',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        solutions: ['a', 'b'],
+        solutions: ['Encapsulate Field', 'Encapsulate Collection', 'Move Method', 'Extract Method', 'Remove Setting Method', 'Hide Method'],
         type: 'data-class',
         image: dataClass,
         codeBefore: dataClassBefore,
         codeAfter: dataClassAfter,
+        explanation: ''
       },
       {
         id: 5,
         name: 'Dead Code',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        solutions: ['a', 'b'],
+        solutions: ['Inline Class', 'Collapse Hierarchy', 'Remove Parameter'],
         type: 'dead-code',
         image: deadCode,
         codeBefore: deadCodeBefore,
         codeAfter: deadCodeAfter,
+        explanation: ''
       },
       {
         id: 6,
         name: 'Speculative Generality',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        solutions: ['a', 'b'],
+        solutions: ['Collapse Hierarchy', 'Inline Class', 'Inline Method', 'Remove Parameter'],
         type: 'speculative-generality',
         image: speculativeGenerality,
         codeBefore: speculativeGeneralityBefore,
         codeAfter: speculativeGeneralityAfter,
+        explanation: ''
       }
     ]
   }

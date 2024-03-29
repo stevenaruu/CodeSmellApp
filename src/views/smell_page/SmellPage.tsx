@@ -69,7 +69,7 @@ const SmellPage = () => {
             <p className="mt-1 text-justify">{smellItem.description}</p>
             <div className="mt-1">
               <p className="font-semibold text-lg text-sky-500 mb-1">Solution</p>
-              <div className="flex gap-2 md:flex-row flex-col">
+              <div className="flex gap-2 flex-row flex-wrap">
                 {smellItem.solutions.map((solution, index) => (
                   <Tooltip
                     key={index}

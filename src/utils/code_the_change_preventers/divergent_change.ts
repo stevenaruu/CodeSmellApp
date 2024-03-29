@@ -1,93 +1,102 @@
-const beforeFoo = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+const beforeItem = `public class Item {
+  private List<Cart> items;
+  private double totalPrice;
+
+  public Item() {
+      items = new ArrayList<>();
+      totalPrice = 0.0;
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public void addItem(Cart item) {
+      items.add(item);
+      totalPrice += item.getPrice();
   }
-  System.out.println("=");
-  System.out.println("Bar");
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public void removeItem(Cart item) {
+      items.remove(item);
+      totalPrice -= item.getPrice();
+  }
+
+  public void checkout() {
+      // Checkout logic
   }
 }`
 
-const beforeBaz = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+const beforeCart = `public class Cart {
+  private String name;
+  private double price;
+
+  public Cart(String name, double price) {
+      this.name = name;
+      this.price = price;
+  }
+  // Setters getters
+}`
+
+const afterItem = `public class Item {
+  private List<Cart> items;
+
+  public Item() {
+      items = new ArrayList<>();
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public void addItem(Cart item) {
+      items.add(item);
   }
-  System.out.println("=");
-  System.out.println("Baz");
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public void removeItem(Cart item) {
+      items.remove(item);
+  }
+
+  public double calculateTotalPrice() {
+      double totalPrice = 0.0;
+      for (Cart item : items) {
+          totalPrice += item.getPrice();
+      }
+      return totalPrice;
+  }
+
+  public void checkout() {
+      double totalPrice = calculateTotalPrice();
+      // Checkout logic
   }
 }`
 
-const beforeQux = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Qux");
+const afterCart = `public class Cart {
+  private String name;
+  private double price;
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public Cart(String name, double price) {
+      this.name = name;
+      this.price = price;
   }
+  // Setter getter
 }`
 
 const divergentChangeBefore = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
+    class: 'Item',
+    code: beforeItem
   },
   {
     id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
+    class: 'Cart',
+    code: beforeCart
   },
 ]
 
 const divergentChangeAfter = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
+    class: 'Item',
+    code: afterItem
   },
   {
     id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
+    class: 'Cart',
+    code: afterCart
   },
 ]
 
