@@ -21,6 +21,10 @@ const SmellPage = () => {
     document.title = smell?.name || '';
   }, [])
 
+  const openInNewTab = (url: string) => {
+    window.open(url, '_blank', 'noreferrer');
+  };
+
   const handleDirect = (type: string) => {
     navigate(`/smell/${name}/${type}`);
   }
@@ -49,6 +53,12 @@ const SmellPage = () => {
       handleTooltipClose(id);
     }, 1000);
   };
+
+  const handleRedirect = (url: string) => {
+    const convertUrl = url.toLowerCase().replace(/\s+/g, '-');
+    const redirect = `https://refactoring.guru/${convertUrl}`
+    openInNewTab(redirect);
+  }
 
   return (
     <>
@@ -86,7 +96,7 @@ const SmellPage = () => {
                   >
                     <div
                       className="bg-gray-200 px-2 py-1 w-fit rounded-sm cursor-pointer"
-                      onClick={() => handleTooltipOpen(`${smellItem.id}_${index}`, solution)}
+                      onClick={() => { handleTooltipOpen(`${smellItem.id}_${index}`, solution); handleRedirect(solution) }}
                     >
                       {solution}
                     </div>
