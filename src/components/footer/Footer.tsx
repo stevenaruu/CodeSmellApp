@@ -57,7 +57,7 @@ const Footer = () => {
             <p className='text-xl'>2602075440 - WILSON WIJAYA</p>
           </div>
         </div>
-        <p className='text-2xl text-center font-semibold'>&copy; 2024 Website made with ❤</p>
+        <p className='text-2xl text-center font-semibold'> &copy; 2024 | Website made with ❤</p>
       </div>
     </div>
   )
