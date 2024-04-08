@@ -17,7 +17,7 @@ const Footer = () => {
               whileHover={{ scale: 1.02 }}
               onHoverStart={e => { }}
               onHoverEnd={e => { }}
-              className='text-xl cursor-pointer hover:text-sky-500 transition duration-300' onClick={() => openInNewTab('https://refactoring.guru/')}
+              className='text-xl cursor-pointer hover:text-sky-500 transition duration-300' onClick={() => openInNewTab('https://refactoring.guru/refactoring/smells/')}
             >
               Refactoring Guru
             </motion.p>
@@ -26,7 +26,7 @@ const Footer = () => {
               onHoverStart={e => { }}
               onHoverEnd={e => { }}
               className='text-xl cursor-pointer hover:text-sky-500 transition duration-300'
-              onClick={() => openInNewTab('https://sourcemaking.com/')}
+              onClick={() => openInNewTab('https://sourcemaking.com/refactoring/smells/')}
             >
               Source Making
             </motion.p>
