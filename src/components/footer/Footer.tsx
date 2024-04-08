@@ -51,10 +51,15 @@ const Footer = () => {
           </div>
           <img src={mario} className='w-48 h-48 lg:block hidden' />
           <div className='flex flex-col gap-2'>
-            <p className='text-2xl font-bold'>Member</p>
-            <p className='text-xl'>D6665 - REZKI YUNANDA, S.Kom., M.Kom</p>
-            <p className='text-xl'>2602064802 - STEVEN</p>
-            <p className='text-xl'>2602075440 - WILSON WIJAYA</p>
+            <div className='flex flex-col gap-2'>
+              <p className='text-2xl font-bold'>Lecturer</p>
+              <p className='text-xl'>D6665 - REZKI YUNANDA, S.Kom., M.Kom</p>
+            </div>
+            <div className='flex flex-col gap-2 lg:mt-2 mt-10'>
+              <p className='text-2xl font-bold'>Student</p>
+              <p className='text-xl'>2602064802 - STEVEN</p>
+              <p className='text-xl'>2602075440 - WILSON WIJAYA</p>
+            </div>
           </div>
         </div>
         <p className='text-2xl text-center font-semibold'> &copy; 2024 | Website made with ❤</p>
