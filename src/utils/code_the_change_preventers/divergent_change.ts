@@ -3,22 +3,22 @@ const beforeItem = `public class Item {
   private double totalPrice;
 
   public Item() {
-      items = new ArrayList<>();
-      totalPrice = 0.0;
+    items = new ArrayList<>();
+    totalPrice = 0.0;
   }
 
   public void addItem(Cart item) {
-      items.add(item);
-      totalPrice += item.getPrice();
+    items.add(item);
+    totalPrice += item.getPrice();
   }
 
   public void removeItem(Cart item) {
-      items.remove(item);
-      totalPrice -= item.getPrice();
+    items.remove(item);
+    totalPrice -= item.getPrice();
   }
 
   public void checkout() {
-      // Checkout logic
+    // Checkout logic
   }
 }`
 
@@ -27,8 +27,8 @@ const beforeCart = `public class Cart {
   private double price;
 
   public Cart(String name, double price) {
-      this.name = name;
-      this.price = price;
+    this.name = name;
+    this.price = price;
   }
   // Setters getters
 }`
@@ -37,28 +37,28 @@ const afterItem = `public class Item {
   private List<Cart> items;
 
   public Item() {
-      items = new ArrayList<>();
+    items = new ArrayList<>();
   }
 
   public void addItem(Cart item) {
-      items.add(item);
+    items.add(item);
   }
 
   public void removeItem(Cart item) {
-      items.remove(item);
+    items.remove(item);
   }
 
   public double calculateTotalPrice() {
-      double totalPrice = 0.0;
-      for (Cart item : items) {
-          totalPrice += item.getPrice();
-      }
-      return totalPrice;
+    double totalPrice = 0.0;
+    for (Cart item : items) {
+      totalPrice += item.getPrice();
+    }
+    return totalPrice;
   }
 
   public void checkout() {
-      double totalPrice = calculateTotalPrice();
-      // Checkout logic
+    double totalPrice = calculateTotalPrice();
+    // Checkout logic
   }
 }`
 
@@ -68,8 +68,8 @@ const afterCart = `public class Cart {
   private double price;
 
   public Cart(String name, double price) {
-      this.name = name;
-      this.price = price;
+    this.name = name;
+    this.price = price;
   }
   // Setter getter
 }`

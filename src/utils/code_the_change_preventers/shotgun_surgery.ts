@@ -1,94 +1,117 @@
-const beforeFoo = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Bar");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+const beforeProductPricing = `public class ProductPricing {
+  public double calculatePrice(double basePrice) {
+    return basePrice * 1.2; // Menambahkan markup sebesar 20%
   }
 }`
 
-const beforeBaz = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Baz");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+const beforeProductAvailability = `public class ProductAvailability {
+  public boolean checkAvailability(int productId) {
+    // Logika untuk mengecek ketersediaan produk
+    return true;
   }
 }`
 
-const beforeQux = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+const beforeProductDescription = `public class ProductDescription {
+  public String getProductDescription(int productId) {
+    // Logika untuk mengecek deskripsi produk
+    return "Product Description";
   }
+}`
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+const beforeClient = `public class Client {
+  public static void main(String[] args) {
+      int productId = 123;
+      
+      ProductPricing pricing = new ProductPricing();
+      ProductAvailability availability = new ProductAvailability();
+      ProductDescription description = new ProductDescription();
+      
+      double price = pricing.calculatePrice(100);
+      boolean isAvailable = availability.checkAvailability(productId);
+      String productDescription = description.getProductDescription(productId);
+      
+      // Business logic lainnya
   }
-  System.out.println("=");
-  System.out.println("Qux");
+}`
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+const afterProduct = `public class Product {
+  private int productId;
+  private double basePrice;
+  private String description;
+  private boolean available;
+  
+  public Product(int productId, double basePrice, String description, boolean available) {
+    this.productId = productId;
+    this.basePrice = basePrice;
+    this.description = description;
+    this.available = available;
+  }
+  
+  public double calculatePrice() {
+    return basePrice * 1.2; // Menambahkan markup sebesar 20%
+  }
+  
+  public boolean checkAvailability() {
+    // Logika untuk mengecek ketersediaan produk
+    return true;
+  }
+  
+  public String getProductDescription() {
+    // Logika untuk mengecek deskripsi produk
+    return description;
+  }
+  
+  // Setters dan getters lainnya
+}`
+
+const afterClient = `public class Client {
+  public static void main(String[] args) {
+    int idProduk = 123;
+    
+    Product produk = new Product(idProduk, 100, "Deskripsi Produk", true);
+    
+    double harga = produk.hitungHarga();
+    boolean tersedia = produk.cekKetersediaan();
+    String deskripsiProduk = produk.getDeskripsiProduk();
+    
+    // Business logic lainnya
   }
 }`
 
 const shotgunSurgeryBefore = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
+    class: 'ProductPricing',
+    code: beforeProductPricing
   },
   {
     id: 2,
-    class: 'baz',
-    code: beforeBaz
+    class: 'ProductAvailability',
+    code: beforeProductAvailability
   },
   {
     id: 3,
-    class: 'qux',
-    code: beforeQux
+    class: 'ProductDescription',
+    code: beforeProductDescription
+  },
+  {
+    id: 4,
+    class: 'Client',
+    code: beforeClient
   },
 ]
 
 const shotgunSurgeryAfter = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
+    class: 'Product',
+    code: afterProduct
   },
   {
     id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
-  },
+    class: 'Client',
+    code: afterClient
+  }
 ]
 
 export { shotgunSurgeryBefore, shotgunSurgeryAfter }

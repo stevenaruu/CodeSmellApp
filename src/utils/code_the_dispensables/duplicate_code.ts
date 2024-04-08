@@ -1,93 +1,59 @@
-const beforeFoo = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+const beforeCalculator = `public class Calculator {
+  public float add(float a, float b) {
+    return a + b;
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Bar");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-}`
-
-const beforeBaz = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+  // duplicate with add method
+  public float total(float a, float b) {
+    return a + b;
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Baz");
+  public float subtract(float a, float b) {
+    return a - b;
+  } 
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public float multiply(float a, float b) {
+    return a * b;
+  }
+
+  public float divide(float a, float b) {
+    if (b == 0) throw new IllegalArgumentException("Cannot be divided by zero number")
+    return a / b;
   }
 }`
 
-const beforeQux = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+const afterCalculator = `public class Calculator {
+  public float add(float a, float b) {
+    return a + b;
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Qux");
+  public float subtract(float a, float b) {
+    return a - b;
+  } 
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public float multiply(float a, float b) {
+    return a * b;
+  }
+
+  public float divide(float a, float b) {
+    if (b == 0) throw new IllegalArgumentException("Cannot be divided by zero number")
+    return a / b;
   }
 }`
 
 const duplicateCodeBefore = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
-  },
-  {
-    id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
+    class: 'Calculaotr',
+    code: beforeCalculator
   },
 ]
 
 const duplicateCodeAfter = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
-  },
-  {
-    id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
+    class: 'Calculator',
+    code: afterCalculator
   },
 ]
 

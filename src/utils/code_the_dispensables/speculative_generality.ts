@@ -1,94 +1,69 @@
-const beforeFoo = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+const beforePerson = `public class Person {
+  private int health;
+  private int intelligence;
+  private Strength strength;
+
+  public Person(int health, int intelligence, Strength strength) {
+    this.health = health;
+    this.intelligence = intelligence;
+    this.strength = strength;
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Bar");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-}`
-
-const beforeBaz = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+  public void attack() {
+    // method untuk menyerang
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public void defend() {
+    // method untuk bertahan
   }
-  System.out.println("=");
-  System.out.println("Baz");
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public void heal() {
+    // method untuk meregenerasi darah
+  }
+
+  public void pray() {
+    // method untuk berdoa
   }
 }`
 
-const beforeQux = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+const afterPerson = `public class Person {
+  private int health;
+  private int intelligence;
+  private Strength strength;
+
+  public Person(int health, int intelligence, Strength strength) {
+    this.health = health;
+    this.intelligence = intelligence;
+    this.strength = strength;
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public void attack() {
+    // method untuk menyerang
   }
-  System.out.println("=");
-  System.out.println("Qux");
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public void defend() {
+    // method untuk bertahan
+  }
+
+  public void heal() {
+    // method untuk meregenerasi darah
   }
 }`
 
 const speculativeGeneralityBefore = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
-  },
-  {
-    id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
-  },
+    class: 'Person',
+    code: beforePerson
+  }
 ]
 
 const speculativeGeneralityAfter = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
-  },
-  {
-    id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
-  },
+    class: 'Person',
+    code: afterPerson
+  }
 ]
 
 export { speculativeGeneralityBefore, speculativeGeneralityAfter }

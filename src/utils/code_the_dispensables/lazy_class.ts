@@ -1,94 +1,54 @@
-const beforeFoo = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
+const beforeStrength = `class Strength {
+  private int value;
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Bar");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public Strength(int value) {
+    this.value = value;
   }
 }`
 
-const beforeBaz = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
+const beforePerson = `public class Person {
+  private int health;
+  private int intelligence;
+  private Strength strength;
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Baz");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public Person(int health, int intelligence, Strength strength) {
+    this.health = health;
+    this.intelligence = intelligence;
+    this.strength = strength;
   }
 }`
 
-const beforeQux = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
+const afterPerson = `public class Person {
+  private int health;
+  private int intelligence;
+  private int strength;
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Qux");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public Person(int health, int intelligence, int strength) {
+    this.health = health;
+    this.intelligence = intelligence;
+    this.strength = strength;
   }
 }`
 
 const lazyClassBefore = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
+    class: 'Strength',
+    code: beforeStrength
   },
   {
     id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
-  },
+    class: 'Person',
+    code: beforePerson
+  }
 ]
 
 const lazyClassAfter = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
-  },
-  {
-    id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
-  },
+    class: 'Person',
+    code: afterPerson
+  }
 ]
 
 export { lazyClassBefore, lazyClassAfter }

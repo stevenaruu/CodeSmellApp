@@ -1,93 +1,127 @@
-const beforeFoo = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
+const beforeKendaraan = `public class Kendaraan() {
+  int kecepatan;
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  void tambahKecepatan(int nilai) {
+    kecepatan += nilai;
   }
-  System.out.println("=");
-  System.out.println("Bar");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  void kurangiKecepatan(int nilai) {
+    kecepatan -= nilai;
   }
 }`
 
-const beforeBaz = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
+const beforeMobil = `public class Mobil extends Kendaraan {
+  // sebuah class mobil yang di extends dari kendaraan yang memiliki atribut dan method
+}`
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Baz");
+const beforeMotor = `public class Motor extends Kendaraan {
+  // sebuah class motor yang di extends dari kendaraan yang memiliki atribut dan method
+}`
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+const beforeMode = `class Mode {
+  String mode;
+
+  void setMode(String mode) {
+    this.mode = mode;
   }
 }`
 
-const beforeQux = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+const beforeModeMobil = `public class ModeMobil extends Mode {
+  // sebuah class mode mobil yang di extends dari mode yang memiliki atribut dan method
+}`
+
+const beforeModeMotor = `public class ModeMotor extends Mode {
+  // sebuah class mode motor yang di extends dari mode yang memiliki atribut dan method
+}`
+
+const afterKendaraan = `public class Kendaraan() {
+  int kecepatan;
+  Mode mode;
+
+  Kendaraan(Mode mode) {
+    this.mode = mode;
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  void tambahKecepatan(int nilai) {
+    kecepatan += nilai;
   }
-  System.out.println("=");
-  System.out.println("Qux");
+  void kurangiKecepatan(int nilai) {
+    kecepatan -= nilai;
+  }
+}`
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+const afterMode = `class Mode {
+  String mode;
+
+  void setMode(String mode) {
+    this.mode = mode;
+  }
+}`
+
+const afterMobil = `public class Mobil extends Kendaraan {
+  Mobil(Mode mode) {
+    super(mode);
+  }
+}`
+
+const afterMotor = `public class Motor extends Kendaraan {
+  Mobil(Mode mode) {
+    super(mode);
   }
 }`
 
 const parallelInheritanceHierarchiesBefore = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
+    class: 'Kendaraan',
+    code: beforeKendaraan
   },
   {
     id: 2,
-    class: 'baz',
-    code: beforeBaz
+    class: 'Mode',
+    code: beforeMode
   },
   {
     id: 3,
-    class: 'qux',
-    code: beforeQux
+    class: 'Mobil',
+    code: beforeMobil
+  },
+  {
+    id: 4,
+    class: 'Motor',
+    code: beforeMotor
+  },
+  {
+    id: 5,
+    class: 'ModeMobil',
+    code: beforeModeMobil
+  },
+  {
+    id: 6,
+    class: 'ModeMotor',
+    code: beforeModeMotor
   },
 ]
 
 const parallelInheritanceHierarchiesAfter = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
+    class: 'Kendaraan',
+    code: afterKendaraan
   },
   {
     id: 2,
-    class: 'baz',
-    code: beforeBaz
+    class: 'Mode',
+    code: afterMode
   },
   {
     id: 3,
-    class: 'qux',
-    code: beforeQux
+    class: 'Mobil',
+    code: afterMobil
+  },
+  {
+    id: 4,
+    class: 'Motor',
+    code: afterMotor
   },
 ]
 

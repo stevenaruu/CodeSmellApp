@@ -1,94 +1,34 @@
-const beforeFoo = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Bar");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+const beforeCalculator = `public class Calculator {
+  // Metode untuk penambahan dua angka
+  public int add(int a, int b) {
+    // Membuat sebuah variable sum, untuk menambahkan a dan b
+    int sum = a + b;
+    // mengembalikan nilai sum setelah sum berhasil di tambahkan
+    return sum;
   }
 }`
 
-const beforeBaz = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Baz");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-}`
-
-const beforeQux = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Qux");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+const afterCalculator = `public class Calculator {
+  public int add(int a, int b) {
+    int sum = a + b;
+    return sum;
   }
 }`
 
 const commentBefore = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
-  },
-  {
-    id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
-  },
+    class: 'Calculator',
+    code: beforeCalculator
+  }
 ]
 
 const commentAfter = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
-  },
-  {
-    id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
-  },
+    class: 'Calculator',
+    code: afterCalculator
+  }
 ]
 
 export { commentBefore, commentAfter }

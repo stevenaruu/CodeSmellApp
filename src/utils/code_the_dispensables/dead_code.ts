@@ -1,94 +1,40 @@
-const beforeFoo = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+const beforeDiscount = `public double GetDiscount() {
+  double discountPrice = 0;
+
+  // dead code
+  if(isDiscount){
+    if(price < 10000){
+      discountPrice = price * 0.1;
+    } else {
+      discountPrice = price * 0.2;
+    }
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Bar");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
+  if(isDiscount) discountPrice = price * 0.15;
+  return price - discountPrice;
 }`
 
-const beforeBaz = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
+const afterDiscount = `public double GetDiscount() {
+  double discountPrice = 0;
+  if(isDiscount) discountPrice = price * 0.15;
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Baz");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-}`
-
-const beforeQux = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Qux");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
+  return price - discountPrice;
 }`
 
 const deadCodeBefore = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
-  },
-  {
-    id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
-  },
+    class: 'Discount',
+    code: beforeDiscount
+  }
 ]
 
 const deadCodeAfter = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
-  },
-  {
-    id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
-  },
+    class: 'Discount',
+    code: afterDiscount
+  }
 ]
 
 export { deadCodeBefore, deadCodeAfter }

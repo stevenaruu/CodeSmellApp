@@ -1,94 +1,55 @@
-const beforeFoo = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
-  }
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Bar");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
+const beforeCat = `public class Cat() {
+  public String name;
+  public int age;
+  public String breed;
 }`
 
-const beforeBaz = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+const afterCat = `public class Cat {
+  private String name;
+  private int age;
+  private String breed;
+
+  // Setter methods
+  public void setName(String name) {
+    this.name = name;
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-  System.out.println("=");
-  System.out.println("Baz");
-
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
-  }
-}`
-
-const beforeQux = `public void bar() {
-  // clear screen
-  for(int i = 0; i < 26; i++) {
-    System.out.println("");
+  public void setAge(int age) {
+    this.age = age;
   }
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  public void setBreed(String breed) {
+    this.breed = breed;
   }
-  System.out.println("=");
-  System.out.println("Qux");
 
-  // print 3x
-  for(int i = 0; i < 3; i++) {
-    System.out.println("=");
+  // Getter methods
+  public String getName() {
+    return name;
+  }
+
+  public int getAge() {
+    return age;
+  }
+
+  public String getBreed() {
+    return breed;
   }
 }`
 
 const dataClassBefore = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
-  },
-  {
-    id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
-  },
+    class: 'Cat',
+    code: beforeCat
+  }
 ]
 
 const dataClassAfter = [
   {
     id: 1,
-    class: 'foo',
-    code: beforeFoo
-  },
-  {
-    id: 2,
-    class: 'baz',
-    code: beforeBaz
-  },
-  {
-    id: 3,
-    class: 'qux',
-    code: beforeQux
-  },
+    class: 'Cat',
+    code: afterCat
+  }
 ]
 
 export { dataClassBefore, dataClassAfter }
